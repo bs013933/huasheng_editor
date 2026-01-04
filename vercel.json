@@ -5,13 +5,19 @@
   "installCommand": null,
   "framework": null,
   "outputDirectory": "./",
-  "redirects": [
+  "routes": [
     {
-      "source": "/",
-      "destination": "/auth.html",
-      "permanent": false
+      "src": "/",
+      "dest": "/auth.html"
+    },
+    {
+      "src": "/(.*)",
+      "dest": "/$1"
     }
   ],
+  "env": {
+    "ACCESS_PASSWORD": "@access_password"
+  },
   "headers": [
     {
       "source": "/api/(.*)",
